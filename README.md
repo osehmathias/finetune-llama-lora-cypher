@@ -141,6 +141,6 @@ For the purpose of this project, we fine-tuned two models: Llama 7B and CodeLlam
 - **Epochs**: 3
 - **Learning Rate**: 0.0002
 
-## Testing Results
+## Training Loss
 
-We conducted several tests to evaluate the performance of the fine-tuned models. The results showed a significant improvement in accuracy and efficiency when processing cypher queries. Details of the testing methodology and results are included in the `testing_results.md` document.
+![alt text](/misc/train-image.png "Title")
