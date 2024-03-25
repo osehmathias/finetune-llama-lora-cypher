@@ -1,0 +1,53 @@
+model_type: llm
+input_features:
+  - name: prompt
+    type: text
+    preprocessing:
+      max_sequence_length: null
+output_features:
+  - name: output
+    type: text
+    preprocessing:
+      max_sequence_length: null
+prompt:
+  template: |
+    Below is an instruction that describes a task, paired with an input
+    that may provide further context. Write a response that appropriately
+    completes the request.
+
+    ### Instruction: {instruction}
+
+    ### Input: {input}
+
+    ### Response:
+preprocessing:
+  split:
+    type: random
+    probabilities:
+      - 0.95
+      - 0.05
+      - 0
+  global_max_sequence_length: 2048
+adapter:
+  type: lora
+generation:
+  max_new_tokens: 64
+trainer:
+  type: finetune
+  epochs: 3
+  optimizer:
+    type: paged_adam
+  batch_size: 1
+  eval_steps: 100
+  learning_rate: 0.0002
+  eval_batch_size: 2
+  steps_per_checkpoint: 1000
+  learning_rate_scheduler:
+    decay: cosine
+    warmup_fraction: 0.03
+  gradient_accumulation_steps: 16
+  enable_gradient_checkpointing: true
+base_model: meta-llama/Llama-2-7b-hf
+quantization:
+  bits: 4
+  bnb_4bit_compute_dtype: bfloat16
