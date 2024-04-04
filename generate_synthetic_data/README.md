@@ -9,7 +9,7 @@ There are four notebooks in this repo:
 
 It creates questions, then a cypher query for each question.
 
-Queries are tested and soreted into three files - Pass, Error, No Data. You should review the latter two piles
+Queries are tested and sorted into three files - Pass, Error, No Data. You should review the latter two piles
 
 We then create 10 different questions for each question / query pair. Those additional questions should lead to the same query.
 
@@ -41,4 +41,4 @@ You will need to check and fix those that pass or produce no data.
 
 For each question / query pair, create 10 different questions that should end up at the same cypher query and add them to a CSV.
 
-Once this has run, your model is ready to find tune.
+Once this has run, your model is ready to fine tune.
