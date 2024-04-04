@@ -28,8 +28,8 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```sh
-   git clone https://your-repository-link-here
-   cd fine-tune-llama-lora-synthetic-cypher-data
+   git clone git@github.com:osehmathias/finetune-llama-lora-cypher.git
+   cd finetune-llama-lora-cypher
    ```
 2. Create and activate a virtual environment (optional):
    ```sh
